@@ -1,0 +1,10 @@
+        Mockito.when(iEsecurityMgr.getPreferredDecimalConvention(Mockito.anyLong(), dbconn, iboSessionData)).thenReturn(6);
+        ResultSet resultSet = Mockito.mock(ResultSet.class);
+        Mockito.when(resultSet.next()).thenReturn(true);
+        Mockito.when(resultSet.getInt(1)).thenReturn(6);
+        PreparedStatement statement = Mockito.mock(PreparedStatement.class);
+        Mockito.when(StatementFactory.getStatement(dbconn, Mockito.anyString())).thenReturn(statement);
+        Mockito.when(statement.executeQuery()).thenReturn(resultSet);
+        Mockito.when(dbconn.createStatement()).thenReturn(statement);
+        ClassName className = Mockito.mock(ClassName.class);
+        Mockito.doReturn(6).when(className).getConvention(ID, dbconn);
