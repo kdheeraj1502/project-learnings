@@ -1,2 +1,16 @@
+insert into Student(id, studid, marks, subject) values(1, 101, 56, 'Physics');
+insert into Student(id, studid, marks, subject) values(2, 101, 76, 'Maths');
+insert into Student(id, studid, marks, subject) values(3, 101, 89, 'Chemistry');
+insert into Student(id, studid, marks, subject) values(4, 103, 45, 'Physics');
+insert into Student(id, studid, marks, subject) values(5, 103, 93, 'Maths');
+insert into Student(id, studid, marks, subject) values(6, 103, 49, 'Chemistry');
+insert into Student(id, studid, marks, subject) values(7, 102, 78, 'Physics');
+insert into Student(id, studid, marks, subject) values(8, 102, 86, 'Chemistry');
+insert into Student(id, studid, marks, subject) values(9, 102, 63, 'Maths');
 SELECT DISTINCT(s.studid), (a.marks) as Physics, (b.marks) as Chemitry, (c.marks) as Maths From Student s Join Student a on s.studid = a.studid and a.subject = 'Chemistry'
 join student b on a.studid = b.studid and b.subject = 'Physics' join student c  on b.studid = c.studid and c.subject = 'Maths';
+
+output : 
+102	86	78	63
+101	89	56	76
+103	49	45	93
