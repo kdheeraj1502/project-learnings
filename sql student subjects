@@ -1,0 +1,2 @@
+SELECT DISTINCT(s.studid), (a.marks) as Physics, (b.marks) as Chemitry, (c.marks) as Maths From Student s Join Student a on s.studid = a.studid and a.subject = 'Chemistry'
+join student b on a.studid = b.studid and b.subject = 'Physics' join student c  on b.studid = c.studid and c.subject = 'Maths';
